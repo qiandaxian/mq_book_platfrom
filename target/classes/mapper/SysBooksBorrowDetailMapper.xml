@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cic.dao.SysBooksBorrowDetailMapper">
+  <resultMap id="BaseResultMap" type="com.cic.entity.po.SysBooksBorrowDetail">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="uuid" jdbcType="VARCHAR" property="uuid" />
+    <result column="sys_user_uuid" jdbcType="VARCHAR" property="sysUserUuid" />
+    <result column="sys_books_uuid" jdbcType="VARCHAR" property="sysBooksUuid" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="borrow_status" jdbcType="INTEGER" property="borrowStatus" />
+    <result column="return_time" jdbcType="TIMESTAMP" property="returnTime" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cic.dao.SysCompanyMapper">
+  <resultMap id="BaseResultMap" type="com.cic.entity.po.SysCompany">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="uuid" jdbcType="VARCHAR" property="uuid" />
+    <result column="company_name" jdbcType="VARCHAR" property="companyName" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="company_scope" jdbcType="VARCHAR" property="companyScope" />
+  </resultMap>
+</mapper>

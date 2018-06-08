@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cic.dao.SysBooksGradeMapper">
+  <resultMap id="BaseResultMap" type="com.cic.entity.po.SysBooksGrade">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="uuid" jdbcType="VARCHAR" property="uuid" />
+    <result column="sys_books_uuid" jdbcType="VARCHAR" property="sysBooksUuid" />
+    <result column="sys_user_uuid" jdbcType="VARCHAR" property="sysUserUuid" />
+    <result column="grade" jdbcType="INTEGER" property="grade" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+</mapper>
