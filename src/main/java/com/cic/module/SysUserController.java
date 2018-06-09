@@ -8,6 +8,7 @@ import com.cic.entity.po.SysBooks;
 import com.cic.entity.po.SysCompany;
 import com.cic.entity.po.SysUser;
 import com.cic.entity.vo.AddUserInfoVo;
+import com.cic.entity.vo.AdminLoginVo;
 import com.cic.service.SysCompanyService;
 import com.cic.service.SysUserService;
 import com.cic.utils.UUIDGenerator;
@@ -144,4 +145,14 @@ public class SysUserController {
 		sysCompanyList.forEach(sysCompany -> data.add(convertSysCompanyToNativeDTO(sysCompany)));
 		return ResultGenerator.genSuccessResult(data);
 	}
+
+
+	@PostMapping("/adminLogin")
+	public Result adminLogin(AdminLoginVo vo) throws Exception {
+
+		return ResultGenerator.genSuccessResult();
+	}
+
+	
+
 }
