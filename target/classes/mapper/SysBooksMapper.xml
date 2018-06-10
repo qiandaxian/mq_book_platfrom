@@ -144,6 +144,14 @@
            <!--END-->
            <!--<![CDATA[>=]]> ${bookBorrowNumberGt}-->
     <!--</if>-->
+    --     <if test=" isReturn != null and isReturn != '' " >
+    --         <when test="isReturn = 'true'">
+    --           AND t1.borrow_status = 1
+    --         </when>
+    --         <otherwise>
+    --           AND t1.borrow_status = 0
+    --         </otherwise>
+    --     </if>
   </select>
 
 
