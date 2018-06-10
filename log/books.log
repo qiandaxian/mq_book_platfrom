@@ -275,3 +275,675 @@
 2018-06-07 18:41:41.304 info 5354 --- [Thread-59] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7c2888e1: startup date [Thu Jun 07 14:09:19 CST 2018]; root of context hierarchy
 2018-06-07 18:41:41.315 info 5354 --- [Thread-59] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
 2018-06-07 18:41:41.317 info 5354 --- [Thread-59] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-06-10 10:53:55.677  INFO 2580 --- [restartedMain] com.cic.MqPlatfromApplication            : Starting MqPlatfromApplication on localhost with PID 2580 (/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes started by qiandaxian in /Users/qiandaxian/Documents/IdeaProject/mq_platfrom)
+2018-06-10 10:53:55.678  INFO 2580 --- [restartedMain] com.cic.MqPlatfromApplication            : The following profiles are active: dev
+2018-06-10 10:53:55.732  INFO 2580 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4aefaaf6: startup date [Sun Jun 10 10:53:55 CST 2018]; root of context hierarchy
+2018-06-10 10:53:56.817  WARN 2580 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.cic]' package. Please check your configuration.
+2018-06-10 10:53:57.001  WARN 2580 --- [restartedMain] o.s.c.a.ConfigurationClassPostProcessor  : Cannot enhance @Configuration bean definition 'mybatisConfigurer' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2018-06-10 10:53:57.310  INFO 2580 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$394a7131] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-10 10:53:57.729  INFO 2580 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9651 (http)
+2018-06-10 10:53:57.750  INFO 2580 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-10 10:53:57.750  INFO 2580 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.29
+2018-06-10 10:53:57.873  INFO 2580 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-10 10:53:57.873  INFO 2580 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2145 ms
+2018-06-10 10:53:58.028  INFO 2580 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-06-10 10:53:58.035  INFO 2580 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-06-10 10:53:59.466  INFO 2580 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/addBooks],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.create(com.cic.entity.vo.AddBooksVo,java.lang.String)
+2018-06-10 10:53:59.467  INFO 2580 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/myBorrow]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.list(java.lang.String)
+2018-06-10 10:53:59.467  INFO 2580 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/addGrade],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.addGrade(com.cic.entity.vo.AddGradeVo,java.lang.String) throws java.lang.Exception
+2018-06-10 10:53:59.468  INFO 2580 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/getBooks]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.getBooks(java.lang.String,java.lang.String) throws java.lang.Exception
+2018-06-10 10:53:59.468  INFO 2580 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/bookStatus]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.getBookStatus(java.lang.String,java.lang.String) throws java.lang.Exception
+2018-06-10 10:53:59.468  INFO 2580 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/borrowBooks],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.borrowBooks(java.util.Map,java.lang.String) throws java.lang.Exception
+2018-06-10 10:53:59.468  INFO 2580 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/returnBooks],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.returnBooks(java.util.Map,java.lang.String) throws java.lang.Exception
+2018-06-10 10:53:59.469  INFO 2580 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/userInfo]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.getUserInfo(java.lang.String) throws java.lang.Exception
+2018-06-10 10:53:59.470  INFO 2580 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/login]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.login(java.lang.String) throws java.lang.Exception
+2018-06-10 10:53:59.470  INFO 2580 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/userInfoInputStatus]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.getUserInfoInputStatus(java.lang.String) throws java.lang.Exception
+2018-06-10 10:53:59.470  INFO 2580 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/addUserInfo],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.addUserInfo(com.cic.entity.vo.AddUserInfoVo,java.lang.String) throws java.lang.Exception
+2018-06-10 10:53:59.471  INFO 2580 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/getCompany]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.getCompanyList() throws java.lang.Exception
+2018-06-10 10:53:59.472  INFO 2580 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2018-06-10 10:53:59.475  INFO 2580 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-06-10 10:53:59.476  INFO 2580 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-06-10 10:53:59.477  INFO 2580 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-06-10 10:53:59.479  INFO 2580 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-10 10:53:59.480  INFO 2580 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-10 10:53:59.670  INFO 2580 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-10 10:53:59.750  INFO 2580 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4aefaaf6: startup date [Sun Jun 10 10:53:55 CST 2018]; root of context hierarchy
+2018-06-10 10:54:00.205  INFO 2580 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-06-10 10:54:00.323  INFO 2580 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-06-10 10:54:00.333  INFO 2580 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-06-10 10:54:00.333  INFO 2580 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-06-10 10:54:00.354  INFO 2580 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-06-10 10:54:00.375  INFO 2580 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-06-10 10:54:00.819  INFO 2580 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 9651 (http)
+2018-06-10 10:54:00.823  INFO 2580 --- [restartedMain] com.cic.MqPlatfromApplicationRunner      : 程序启动开始...
+2018-06-10 10:54:00.825  INFO 2580 --- [restartedMain] com.cic.MqPlatfromApplication            : Started MqPlatfromApplication in 5.46 seconds (JVM running for 7.064)
+2018-06-10 10:54:16.094  INFO 2580 --- [Thread-20] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4aefaaf6: startup date [Sun Jun 10 10:53:55 CST 2018]; root of context hierarchy
+2018-06-10 10:54:16.097  INFO 2580 --- [Thread-20] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2018-06-10 10:54:16.099  INFO 2580 --- [Thread-20] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-06-10 22:00:28.557  INFO 9752 --- [restartedMain] com.cic.MqPlatfromApplication            : Starting MqPlatfromApplication on localhost with PID 9752 (/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes started by qiandaxian in /Users/qiandaxian/Documents/IdeaProject/mq_platfrom)
+2018-06-10 22:00:28.558  INFO 9752 --- [restartedMain] com.cic.MqPlatfromApplication            : The following profiles are active: dev
+2018-06-10 22:00:28.615  INFO 9752 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3bae2174: startup date [Sun Jun 10 22:00:28 CST 2018]; root of context hierarchy
+2018-06-10 22:00:29.472  WARN 9752 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.cic]' package. Please check your configuration.
+2018-06-10 22:00:29.620  WARN 9752 --- [restartedMain] o.s.c.a.ConfigurationClassPostProcessor  : Cannot enhance @Configuration bean definition 'mybatisConfigurer' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2018-06-10 22:00:29.883  INFO 9752 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e52c64d7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-10 22:00:30.342  INFO 9752 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9651 (http)
+2018-06-10 22:00:30.390  INFO 9752 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-10 22:00:30.390  INFO 9752 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.29
+2018-06-10 22:00:30.483  INFO 9752 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-10 22:00:30.484  INFO 9752 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1873 ms
+2018-06-10 22:00:30.591  INFO 9752 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-06-10 22:00:30.595  INFO 9752 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-06-10 22:00:32.097  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/addBooks],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.create(com.cic.entity.vo.AddBooksVo,java.lang.String)
+2018-06-10 22:00:32.098  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/myBorrow]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.list(java.lang.String)
+2018-06-10 22:00:32.099  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/addGrade],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.addGrade(com.cic.entity.vo.AddGradeVo,java.lang.String) throws java.lang.Exception
+2018-06-10 22:00:32.100  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/getBooks]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.getBooks(java.lang.String,java.lang.String) throws java.lang.Exception
+2018-06-10 22:00:32.100  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/bookStatus]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.getBookStatus(java.lang.String,java.lang.String) throws java.lang.Exception
+2018-06-10 22:00:32.100  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/borrowBooks],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.borrowBooks(java.util.Map,java.lang.String) throws java.lang.Exception
+2018-06-10 22:00:32.100  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/returnBooks],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.returnBooks(java.util.Map,java.lang.String) throws java.lang.Exception
+2018-06-10 22:00:32.101  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/bookBorrowList],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.getBookBorrowList(com.cic.entity.vo.BookBorrowListVo)
+2018-06-10 22:00:32.104  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/userInfo]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.getUserInfo(java.lang.String) throws java.lang.Exception
+2018-06-10 22:00:32.104  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/edit],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.editUser(com.cic.entity.vo.EditUserVo) throws java.lang.Exception
+2018-06-10 22:00:32.104  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/login]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.login(java.lang.String) throws java.lang.Exception
+2018-06-10 22:00:32.104  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/userInfoInputStatus]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.getUserInfoInputStatus(java.lang.String) throws java.lang.Exception
+2018-06-10 22:00:32.105  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/addUserInfo],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.addUserInfo(com.cic.entity.vo.AddUserInfoVo,java.lang.String) throws java.lang.Exception
+2018-06-10 22:00:32.105  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/getCompany]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.getCompanyList() throws java.lang.Exception
+2018-06-10 22:00:32.105  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/adminLogin],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.adminLogin(com.cic.entity.vo.AdminLoginVo) throws java.lang.Exception
+2018-06-10 22:00:32.106  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/userList],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.getUserList(com.cic.entity.vo.UserListVo)
+2018-06-10 22:00:32.106  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/delete],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.deleteUser(java.util.Map) throws java.lang.Exception
+2018-06-10 22:00:32.107  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2018-06-10 22:00:32.111  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-06-10 22:00:32.113  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-06-10 22:00:32.113  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-06-10 22:00:32.117  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-10 22:00:32.118  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-10 22:00:32.268  INFO 9752 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-10 22:00:32.382  INFO 9752 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3bae2174: startup date [Sun Jun 10 22:00:28 CST 2018]; root of context hierarchy
+2018-06-10 22:00:32.883  INFO 9752 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-06-10 22:00:32.993  INFO 9752 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-06-10 22:00:33.003  INFO 9752 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-06-10 22:00:33.003  INFO 9752 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-06-10 22:00:33.029  INFO 9752 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-06-10 22:00:33.047  INFO 9752 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-06-10 22:00:33.600  INFO 9752 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 9651 (http)
+2018-06-10 22:00:33.604  INFO 9752 --- [restartedMain] com.cic.MqPlatfromApplicationRunner      : 程序启动开始...
+2018-06-10 22:00:33.606  INFO 9752 --- [restartedMain] com.cic.MqPlatfromApplication            : Started MqPlatfromApplication in 5.387 seconds (JVM running for 6.152)
+2018-06-10 22:00:59.492  INFO 9752 --- [http-nio-9651-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-06-10 22:00:59.492  INFO 9752 --- [http-nio-9651-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-06-10 22:00:59.525  INFO 9752 --- [http-nio-9651-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 33 ms
+2018-06-10 22:00:59.552 ERROR 9752 --- [http-nio-9651-exec-2] com.cic.config.web.WebMvcConfigurer      : Request method 'GET' not supported
+
+org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:205) ~[spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:374) ~[spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:314) ~[spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:61) ~[spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:352) ~[spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1160) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:940) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:635) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) [spring-web-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_131]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_131]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
+
+2018-06-10 22:01:12.552 ERROR 9752 --- [http-nio-9651-exec-3] com.cic.config.web.WebMvcConfigurer      : 接口 [/api/sysBooks/bookBorrowList] 出现异常，方法：com.cic.module.SysBooksController.getBookBorrowList，异常摘要：Required request body is missing: public com.cic.config.dao.Result com.cic.module.SysBooksController.getBookBorrowList(com.cic.entity.vo.BookBorrowListVo)
+
+org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public com.cic.config.dao.Result com.cic.module.SysBooksController.getBookBorrowList(com.cic.entity.vo.BookBorrowListVo)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:154) ~[spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:128) ~[spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:158) ~[spring-web-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:128) ~[spring-web-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) [spring-web-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_131]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_131]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
+
+2018-06-10 22:02:05.564  INFO 9752 --- [http-nio-9651-exec-4] com.cic.module.SysBooksController        : 借阅管理>书籍借阅列表返回信息：null
+2018-06-10 22:02:42.373  INFO 9752 --- [http-nio-9651-exec-5] com.cic.module.SysBooksController        : 借阅管理>书籍借阅列表返回信息：null
+2018-06-10 22:02:47.909  INFO 9752 --- [http-nio-9651-exec-6] com.cic.module.SysBooksController        : 借阅管理>书籍借阅列表返回信息：null
+2018-06-10 22:03:52.599 ERROR 9752 --- [http-nio-9651-exec-9] com.cic.config.web.WebMvcConfigurer      : 接口 [/api/sysUser/userList] 出现异常，方法：com.cic.module.SysUserController.getUserList，异常摘要：nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'company_id' in 'class com.cic.entity.vo.UserListVo'
+
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'company_id' in 'class com.cic.entity.vo.UserListVo'
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at com.sun.proxy.$Proxy83.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy86.getUserListByVo(Unknown Source) ~[na:na]
+	at com.cic.service.impl.SysUserServiceImpl.getUserListByVo(SysUserServiceImpl.java:27) ~[classes/:na]
+	at com.cic.service.impl.SysUserServiceImpl$$FastClassBySpringCGLIB$$bb26f674.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738) ~[spring-aop-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99) ~[spring-tx-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282) ~[spring-tx-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96) ~[spring-tx-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673) ~[spring-aop-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at com.cic.service.impl.SysUserServiceImpl$$EnhancerBySpringCGLIB$$975de540.getUserListByVo(<generated>) ~[classes/:na]
+	at com.cic.module.SysUserController.getUserList(SysUserController.java:183) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) [spring-web-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_131]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_131]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'company_id' in 'class com.cic.entity.vo.UserListVo'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:419) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:164) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:162) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:49) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextMap.get(DynamicContext.java:94) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextAccessor.getProperty(DynamicContext.java:108) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:2685) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:114) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.ognl.ASTNotEq.getValueBody(ASTNotEq.java:50) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.ognl.ASTAnd.getValueBody(ASTAnd.java:61) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:470) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:434) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:44) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateBoolean(ExpressionEvaluator.java:32) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:34) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:33) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:41) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:292) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.github.pagehelper.util.SqlUtil.doIntercept(SqlUtil.java:124) ~[pagehelper-4.2.1.jar:na]
+	at com.github.pagehelper.util.SqlUtil.intercept(SqlUtil.java:84) ~[pagehelper-4.2.1.jar:na]
+	at com.github.pagehelper.PageHelper.intercept(PageHelper.java:50) ~[pagehelper-4.2.1.jar:na]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy104.query(Unknown Source) ~[na:na]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) ~[mybatis-3.4.6.jar:3.4.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	... 60 common frames omitted
+
+2018-06-10 22:05:07.112  INFO 9752 --- [Thread-20] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3bae2174: startup date [Sun Jun 10 22:00:28 CST 2018]; root of context hierarchy
+2018-06-10 22:05:07.114  INFO 9752 --- [Thread-20] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2018-06-10 22:05:07.118  INFO 9752 --- [Thread-20] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-06-10 22:05:13.856  INFO 9830 --- [restartedMain] com.cic.MqPlatfromApplication            : Starting MqPlatfromApplication on localhost with PID 9830 (/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes started by qiandaxian in /Users/qiandaxian/Documents/IdeaProject/mq_platfrom)
+2018-06-10 22:05:13.857  INFO 9830 --- [restartedMain] com.cic.MqPlatfromApplication            : The following profiles are active: dev
+2018-06-10 22:05:13.913  INFO 9830 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@42e38df: startup date [Sun Jun 10 22:05:13 CST 2018]; root of context hierarchy
+2018-06-10 22:05:14.730  WARN 9830 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.cic]' package. Please check your configuration.
+2018-06-10 22:05:14.877  WARN 9830 --- [restartedMain] o.s.c.a.ConfigurationClassPostProcessor  : Cannot enhance @Configuration bean definition 'mybatisConfigurer' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2018-06-10 22:05:15.122  INFO 9830 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2dff8415] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-10 22:05:15.485  INFO 9830 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9651 (http)
+2018-06-10 22:05:15.506  INFO 9830 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-10 22:05:15.506  INFO 9830 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.29
+2018-06-10 22:05:15.584  INFO 9830 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-10 22:05:15.585  INFO 9830 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1674 ms
+2018-06-10 22:05:15.681  INFO 9830 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-06-10 22:05:15.684  INFO 9830 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-06-10 22:05:16.785  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/addBooks],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.create(com.cic.entity.vo.AddBooksVo,java.lang.String)
+2018-06-10 22:05:16.786  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/myBorrow]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.list(java.lang.String)
+2018-06-10 22:05:16.786  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/addGrade],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.addGrade(com.cic.entity.vo.AddGradeVo,java.lang.String) throws java.lang.Exception
+2018-06-10 22:05:16.787  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/getBooks]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.getBooks(java.lang.String,java.lang.String) throws java.lang.Exception
+2018-06-10 22:05:16.787  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/bookStatus]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.getBookStatus(java.lang.String,java.lang.String) throws java.lang.Exception
+2018-06-10 22:05:16.787  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/borrowBooks],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.borrowBooks(java.util.Map,java.lang.String) throws java.lang.Exception
+2018-06-10 22:05:16.787  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/returnBooks],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.returnBooks(java.util.Map,java.lang.String) throws java.lang.Exception
+2018-06-10 22:05:16.787  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/bookBorrowList],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.getBookBorrowList(com.cic.entity.vo.BookBorrowListVo)
+2018-06-10 22:05:16.789  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/userInfo]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.getUserInfo(java.lang.String) throws java.lang.Exception
+2018-06-10 22:05:16.789  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/login]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.login(java.lang.String) throws java.lang.Exception
+2018-06-10 22:05:16.789  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/edit],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.editUser(com.cic.entity.vo.EditUserVo) throws java.lang.Exception
+2018-06-10 22:05:16.790  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/userInfoInputStatus]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.getUserInfoInputStatus(java.lang.String) throws java.lang.Exception
+2018-06-10 22:05:16.790  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/addUserInfo],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.addUserInfo(com.cic.entity.vo.AddUserInfoVo,java.lang.String) throws java.lang.Exception
+2018-06-10 22:05:16.790  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/getCompany]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.getCompanyList() throws java.lang.Exception
+2018-06-10 22:05:16.790  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/adminLogin],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.adminLogin(com.cic.entity.vo.AdminLoginVo) throws java.lang.Exception
+2018-06-10 22:05:16.790  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/userList],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.getUserList(com.cic.entity.vo.UserListVo)
+2018-06-10 22:05:16.791  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/delete],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.deleteUser(java.util.Map) throws java.lang.Exception
+2018-06-10 22:05:16.791  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2018-06-10 22:05:16.794  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-06-10 22:05:16.795  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-06-10 22:05:16.795  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-06-10 22:05:16.797  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-10 22:05:16.798  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-10 22:05:16.907  INFO 9830 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-10 22:05:16.983  INFO 9830 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@42e38df: startup date [Sun Jun 10 22:05:13 CST 2018]; root of context hierarchy
+2018-06-10 22:05:17.387  INFO 9830 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-06-10 22:05:17.481  INFO 9830 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-06-10 22:05:17.489  INFO 9830 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-06-10 22:05:17.490  INFO 9830 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-06-10 22:05:17.505  INFO 9830 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-06-10 22:05:17.518  INFO 9830 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-06-10 22:05:17.970  INFO 9830 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 9651 (http)
+2018-06-10 22:05:17.974  INFO 9830 --- [restartedMain] com.cic.MqPlatfromApplicationRunner      : 程序启动开始...
+2018-06-10 22:05:17.976  INFO 9830 --- [restartedMain] com.cic.MqPlatfromApplication            : Started MqPlatfromApplication in 4.427 seconds (JVM running for 5.119)
+2018-06-10 22:05:22.933  INFO 9830 --- [http-nio-9651-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-06-10 22:05:22.933  INFO 9830 --- [http-nio-9651-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-06-10 22:05:22.973  INFO 9830 --- [http-nio-9651-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 40 ms
+2018-06-10 22:05:23.342  INFO 9830 --- [http-nio-9651-exec-2] com.cic.module.SysUserController         : 3.1用户列表接口返回:{"data":{"endRow":2,"firstPage":1,"hasNextPage":false,"hasPreviousPage":false,"isFirstPage":true,"isLastPage":true,"lastPage":1,"list":[{"companyId":"1","companyName":"中航讯西安办公区","createTime":"2018-06-06 18:17:51","openId":"oQXE65JspwfY4TXvlLb7vZODdlaY","userId":"edb67c59987c4136b329","userName":"钱大仙"},{"companyId":"1","companyName":"中航讯西安办公区","createTime":"2018-06-06 18:20:32","openId":"oQXE65MtzseADB6EuUYvT62-EUNk","userId":"6b1b934356ea40efbd94","userName":"金张娟"}],"navigateFirstPage":1,"navigateLastPage":1,"navigatePages":8,"navigatepageNums":[1],"nextPage":0,"pageNum":1,"pageSize":10,"pages":1,"prePage":0,"size":2,"startRow":1,"total":2},"head":{"code":"200","msg":"成功","success":"true"}}
+2018-06-10 23:13:41.911  INFO 9830 --- [Thread-18] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@42e38df: startup date [Sun Jun 10 22:05:13 CST 2018]; root of context hierarchy
+2018-06-10 23:13:41.913  INFO 9830 --- [Thread-18] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2018-06-10 23:13:41.914  INFO 9830 --- [Thread-18] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-06-10 23:13:48.589  INFO 11041 --- [restartedMain] com.cic.MqPlatfromApplication            : Starting MqPlatfromApplication on localhost with PID 11041 (/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes started by qiandaxian in /Users/qiandaxian/Documents/IdeaProject/mq_platfrom)
+2018-06-10 23:13:48.590  INFO 11041 --- [restartedMain] com.cic.MqPlatfromApplication            : The following profiles are active: dev
+2018-06-10 23:13:48.652  INFO 11041 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4aefaaf6: startup date [Sun Jun 10 23:13:48 CST 2018]; root of context hierarchy
+2018-06-10 23:13:49.722  WARN 11041 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.cic]' package. Please check your configuration.
+2018-06-10 23:13:49.942  WARN 11041 --- [restartedMain] o.s.c.a.ConfigurationClassPostProcessor  : Cannot enhance @Configuration bean definition 'mybatisConfigurer' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2018-06-10 23:13:50.330  INFO 11041 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e2a1678b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-10 23:13:50.793  INFO 11041 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9651 (http)
+2018-06-10 23:13:50.826  INFO 11041 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-10 23:13:50.826  INFO 11041 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.29
+2018-06-10 23:13:50.891  INFO 11041 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-10 23:13:50.892  INFO 11041 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2244 ms
+2018-06-10 23:13:50.991  INFO 11041 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-06-10 23:13:50.995  INFO 11041 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-06-10 23:13:51.558  WARN 11041 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcConfigurer': Unsatisfied dependency expressed through field 'sysUserService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sysUserServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sysUserMapper' defined in file [/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes/com/cic/dao/SysUserMapper.class]: Cannot resolve reference to bean 'sqlSessionFactoryBean' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactoryBean' defined in class path resource [com/cic/config/dao/MybatisConfigurer.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryBean' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes/mapper/SysBooksMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes/mapper/SysBooksMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'BookBorrowListVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: BookBorrowListVo
+2018-06-10 23:13:51.560  INFO 11041 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-06-10 23:13:51.575  INFO 11041 --- [restartedMain] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-06-10 23:13:51.584 ERROR 11041 --- [restartedMain] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webMvcConfigurer': Unsatisfied dependency expressed through field 'sysUserService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sysUserServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sysUserMapper' defined in file [/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes/com/cic/dao/SysUserMapper.class]: Cannot resolve reference to bean 'sqlSessionFactoryBean' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactoryBean' defined in class path resource [com/cic/config/dao/MybatisConfigurer.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryBean' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes/mapper/SysBooksMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes/mapper/SysBooksMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'BookBorrowListVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: BookBorrowListVo
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1268) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.12.RELEASE.jar:1.5.12.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.12.RELEASE.jar:1.5.12.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.12.RELEASE.jar:1.5.12.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.12.RELEASE.jar:1.5.12.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.12.RELEASE.jar:1.5.12.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.12.RELEASE.jar:1.5.12.RELEASE]
+	at com.cic.MqPlatfromApplication.main(MqPlatfromApplication.java:10) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-1.5.12.RELEASE.jar:1.5.12.RELEASE]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sysUserServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sysUserMapper' defined in file [/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes/com/cic/dao/SysUserMapper.class]: Cannot resolve reference to bean 'sqlSessionFactoryBean' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactoryBean' defined in class path resource [com/cic/config/dao/MybatisConfigurer.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryBean' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes/mapper/SysBooksMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes/mapper/SysBooksMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'BookBorrowListVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: BookBorrowListVo
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:321) ~[spring-context-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1268) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	... 24 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sysUserMapper' defined in file [/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes/com/cic/dao/SysUserMapper.class]: Cannot resolve reference to bean 'sqlSessionFactoryBean' while setting bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactoryBean' defined in class path resource [com/cic/config/dao/MybatisConfigurer.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryBean' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes/mapper/SysBooksMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes/mapper/SysBooksMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'BookBorrowListVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: BookBorrowListVo
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:359) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1533) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1280) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:522) ~[spring-context-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:496) ~[spring-context-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:627) ~[spring-context-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:169) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessPropertyValues(CommonAnnotationBeanPostProcessor.java:318) ~[spring-context-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	... 35 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactoryBean' defined in class path resource [com/cic/config/dao/MybatisConfigurer.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryBean' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes/mapper/SysBooksMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes/mapper/SysBooksMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'BookBorrowListVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: BookBorrowListVo
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1177) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1071) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	... 50 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactoryBean' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes/mapper/SysBooksMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes/mapper/SysBooksMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'BookBorrowListVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: BookBorrowListVo
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	... 59 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes/mapper/SysBooksMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes/mapper/SysBooksMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'BookBorrowListVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: BookBorrowListVo
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:523) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:380) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:547) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at com.cic.config.dao.MybatisConfigurer.sqlSessionFactoryBean(MybatisConfigurer.java:55) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162) ~[spring-beans-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	... 60 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes/mapper/SysBooksMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'BookBorrowListVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: BookBorrowListVo
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:521) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	... 68 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'BookBorrowListVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: BookBorrowListVo
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:68) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:135) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:128) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:118) ~[mybatis-3.4.6.jar:3.4.6]
+	... 70 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'BookBorrowListVo'.  Cause: java.lang.ClassNotFoundException: Cannot find class: BookBorrowListVo
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116) ~[mybatis-3.4.6.jar:3.4.6]
+	... 74 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: BookBorrowListVo
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116) ~[mybatis-3.4.6.jar:3.4.6]
+	... 76 common frames omitted
+
+2018-06-10 23:15:23.585  INFO 11071 --- [restartedMain] com.cic.MqPlatfromApplication            : Starting MqPlatfromApplication on localhost with PID 11071 (/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes started by qiandaxian in /Users/qiandaxian/Documents/IdeaProject/mq_platfrom)
+2018-06-10 23:15:23.586  INFO 11071 --- [restartedMain] com.cic.MqPlatfromApplication            : The following profiles are active: dev
+2018-06-10 23:15:23.653  INFO 11071 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1a2726f9: startup date [Sun Jun 10 23:15:23 CST 2018]; root of context hierarchy
+2018-06-10 23:15:24.592  WARN 11071 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.cic]' package. Please check your configuration.
+2018-06-10 23:15:24.776  WARN 11071 --- [restartedMain] o.s.c.a.ConfigurationClassPostProcessor  : Cannot enhance @Configuration bean definition 'mybatisConfigurer' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2018-06-10 23:15:25.070  INFO 11071 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$27548d2c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-10 23:15:25.447  INFO 11071 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9651 (http)
+2018-06-10 23:15:25.467  INFO 11071 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-10 23:15:25.468  INFO 11071 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.29
+2018-06-10 23:15:25.544  INFO 11071 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-10 23:15:25.544  INFO 11071 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1895 ms
+2018-06-10 23:15:25.641  INFO 11071 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-06-10 23:15:25.645  INFO 11071 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-06-10 23:15:26.814  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/addBooks],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.create(com.cic.entity.vo.AddBooksVo,java.lang.String)
+2018-06-10 23:15:26.815  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/myBorrow]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.list(java.lang.String)
+2018-06-10 23:15:26.815  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/getBooks]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.getBooks(java.lang.String,java.lang.String) throws java.lang.Exception
+2018-06-10 23:15:26.816  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/addGrade],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.addGrade(com.cic.entity.vo.AddGradeVo,java.lang.String) throws java.lang.Exception
+2018-06-10 23:15:26.816  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/bookStatus]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.getBookStatus(java.lang.String,java.lang.String) throws java.lang.Exception
+2018-06-10 23:15:26.816  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/borrowBooks],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.borrowBooks(java.util.Map,java.lang.String) throws java.lang.Exception
+2018-06-10 23:15:26.816  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/returnBooks],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.returnBooks(java.util.Map,java.lang.String) throws java.lang.Exception
+2018-06-10 23:15:26.817  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/bookBorrowList],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.getBookBorrowList(com.cic.entity.vo.BookBorrowListVo)
+2018-06-10 23:15:26.819  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/userInfo]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.getUserInfo(java.lang.String) throws java.lang.Exception
+2018-06-10 23:15:26.819  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/login]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.login(java.lang.String) throws java.lang.Exception
+2018-06-10 23:15:26.819  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/edit],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.editUser(com.cic.entity.vo.EditUserVo) throws java.lang.Exception
+2018-06-10 23:15:26.819  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/userInfoInputStatus]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.getUserInfoInputStatus(java.lang.String) throws java.lang.Exception
+2018-06-10 23:15:26.820  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/addUserInfo],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.addUserInfo(com.cic.entity.vo.AddUserInfoVo,java.lang.String) throws java.lang.Exception
+2018-06-10 23:15:26.820  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/getCompany]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.getCompanyList() throws java.lang.Exception
+2018-06-10 23:15:26.820  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/adminLogin],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.adminLogin(com.cic.entity.vo.AdminLoginVo) throws java.lang.Exception
+2018-06-10 23:15:26.820  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/userList],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.getUserList(com.cic.entity.vo.UserListVo)
+2018-06-10 23:15:26.820  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/delete],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.deleteUser(java.util.Map) throws java.lang.Exception
+2018-06-10 23:15:26.821  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2018-06-10 23:15:26.824  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-06-10 23:15:26.825  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-06-10 23:15:26.825  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-06-10 23:15:26.828  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-10 23:15:26.828  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-10 23:15:26.941  INFO 11071 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-10 23:15:27.027  INFO 11071 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1a2726f9: startup date [Sun Jun 10 23:15:23 CST 2018]; root of context hierarchy
+2018-06-10 23:15:27.445  INFO 11071 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-06-10 23:15:27.546  INFO 11071 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-06-10 23:15:27.553  INFO 11071 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-06-10 23:15:27.553  INFO 11071 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-06-10 23:15:27.568  INFO 11071 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-06-10 23:15:27.581  INFO 11071 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-06-10 23:15:28.052  INFO 11071 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 9651 (http)
+2018-06-10 23:15:28.056  INFO 11071 --- [restartedMain] com.cic.MqPlatfromApplicationRunner      : 程序启动开始...
+2018-06-10 23:15:28.058  INFO 11071 --- [restartedMain] com.cic.MqPlatfromApplication            : Started MqPlatfromApplication in 4.811 seconds (JVM running for 5.718)
+2018-06-10 23:15:33.564  INFO 11071 --- [http-nio-9651-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-06-10 23:15:33.564  INFO 11071 --- [http-nio-9651-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-06-10 23:15:33.586  INFO 11071 --- [http-nio-9651-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 22 ms
+2018-06-10 23:15:33.773 ERROR 11071 --- [http-nio-9651-exec-1] com.cic.config.web.WebMvcConfigurer      : 接口 [/api/sysBooks/bookBorrowList] 出现异常，方法：com.cic.module.SysBooksController.getBookBorrowList，异常摘要：nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'companyId' in 'class com.cic.entity.vo.BookBorrowListVo'
+
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'companyId' in 'class com.cic.entity.vo.BookBorrowListVo'
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:446) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at com.sun.proxy.$Proxy83.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:139) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:76) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy89.getBookBorrowList(Unknown Source) ~[na:na]
+	at com.cic.service.impl.SysBooksServiceImpl.getBookBorrowList(SysBooksServiceImpl.java:71) ~[classes/:na]
+	at com.cic.service.impl.SysBooksServiceImpl$$FastClassBySpringCGLIB$$18c42de1.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204) ~[spring-core-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:738) ~[spring-aop-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157) ~[spring-aop-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99) ~[spring-tx-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282) ~[spring-tx-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96) ~[spring-tx-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:673) ~[spring-aop-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at com.cic.service.impl.SysBooksServiceImpl$$EnhancerBySpringCGLIB$$d38223d3.getBookBorrowList(<generated>) ~[classes/:na]
+	at com.cic.module.SysBooksController.getBookBorrowList(SysBooksController.java:264) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) [spring-webmvc-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) [tomcat-embed-websocket-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) [spring-web-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) [spring-web-4.3.16.RELEASE.jar:4.3.16.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:496) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [na:1.8.0_131]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [na:1.8.0_131]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.29.jar:8.5.29]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'companyId' in 'class com.cic.entity.vo.BookBorrowListVo'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:419) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:164) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:162) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:49) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.BaseExecutor.createCacheKey(BaseExecutor.java:219) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.executor.CachingExecutor.createCacheKey(CachingExecutor.java:146) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.github.pagehelper.util.SqlUtil.doIntercept(SqlUtil.java:130) ~[pagehelper-4.2.1.jar:na]
+	at com.github.pagehelper.util.SqlUtil.intercept(SqlUtil.java:84) ~[pagehelper-4.2.1.jar:na]
+	at com.github.pagehelper.PageHelper.intercept(PageHelper.java:50) ~[pagehelper-4.2.1.jar:na]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) ~[mybatis-3.4.6.jar:3.4.6]
+	at com.sun.proxy.$Proxy104.query(Unknown Source) ~[na:na]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) ~[mybatis-3.4.6.jar:3.4.6]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) ~[mybatis-3.4.6.jar:3.4.6]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_131]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_131]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_131]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_131]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) ~[mybatis-spring-1.3.2.jar:1.3.2]
+	... 60 common frames omitted
+
+2018-06-10 23:16:35.063  INFO 11071 --- [Thread-19] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1a2726f9: startup date [Sun Jun 10 23:15:23 CST 2018]; root of context hierarchy
+2018-06-10 23:16:35.065  INFO 11071 --- [Thread-19] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2018-06-10 23:16:35.067  INFO 11071 --- [Thread-19] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-06-10 23:16:40.367  INFO 11104 --- [restartedMain] com.cic.MqPlatfromApplication            : Starting MqPlatfromApplication on localhost with PID 11104 (/Users/qiandaxian/Documents/IdeaProject/mq_platfrom/target/classes started by qiandaxian in /Users/qiandaxian/Documents/IdeaProject/mq_platfrom)
+2018-06-10 23:16:40.368  INFO 11104 --- [restartedMain] com.cic.MqPlatfromApplication            : The following profiles are active: dev
+2018-06-10 23:16:40.436  INFO 11104 --- [restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@689b02b6: startup date [Sun Jun 10 23:16:40 CST 2018]; root of context hierarchy
+2018-06-10 23:16:41.430  WARN 11104 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.cic]' package. Please check your configuration.
+2018-06-10 23:16:41.591  WARN 11104 --- [restartedMain] o.s.c.a.ConfigurationClassPostProcessor  : Cannot enhance @Configuration bean definition 'mybatisConfigurer' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2018-06-10 23:16:41.897  INFO 11104 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5f5bdb80] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-06-10 23:16:42.259  INFO 11104 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 9651 (http)
+2018-06-10 23:16:42.279  INFO 11104 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-06-10 23:16:42.280  INFO 11104 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.29
+2018-06-10 23:16:42.380  INFO 11104 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-06-10 23:16:42.380  INFO 11104 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1948 ms
+2018-06-10 23:16:42.534  INFO 11104 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-06-10 23:16:42.540  INFO 11104 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-06-10 23:16:43.744  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/addBooks],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.create(com.cic.entity.vo.AddBooksVo,java.lang.String)
+2018-06-10 23:16:43.746  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/myBorrow]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.list(java.lang.String)
+2018-06-10 23:16:43.746  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/getBooks]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.getBooks(java.lang.String,java.lang.String) throws java.lang.Exception
+2018-06-10 23:16:43.746  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/bookStatus]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.getBookStatus(java.lang.String,java.lang.String) throws java.lang.Exception
+2018-06-10 23:16:43.746  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/borrowBooks],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.borrowBooks(java.util.Map,java.lang.String) throws java.lang.Exception
+2018-06-10 23:16:43.746  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/returnBooks],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.returnBooks(java.util.Map,java.lang.String) throws java.lang.Exception
+2018-06-10 23:16:43.747  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/addGrade],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.addGrade(com.cic.entity.vo.AddGradeVo,java.lang.String) throws java.lang.Exception
+2018-06-10 23:16:43.747  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysBooks/bookBorrowList],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysBooksController.getBookBorrowList(com.cic.entity.vo.BookBorrowListVo)
+2018-06-10 23:16:43.749  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/userInfo]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.getUserInfo(java.lang.String) throws java.lang.Exception
+2018-06-10 23:16:43.749  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/login]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.login(java.lang.String) throws java.lang.Exception
+2018-06-10 23:16:43.749  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/userInfoInputStatus]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.getUserInfoInputStatus(java.lang.String) throws java.lang.Exception
+2018-06-10 23:16:43.749  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/addUserInfo],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.addUserInfo(com.cic.entity.vo.AddUserInfoVo,java.lang.String) throws java.lang.Exception
+2018-06-10 23:16:43.750  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/getCompany]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.getCompanyList() throws java.lang.Exception
+2018-06-10 23:16:43.750  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/adminLogin],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.adminLogin(com.cic.entity.vo.AdminLoginVo) throws java.lang.Exception
+2018-06-10 23:16:43.750  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/userList],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.getUserList(com.cic.entity.vo.UserListVo)
+2018-06-10 23:16:43.750  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/delete],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.deleteUser(java.util.Map) throws java.lang.Exception
+2018-06-10 23:16:43.750  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/sysUser/edit],methods=[POST]}" onto public com.cic.config.dao.Result com.cic.module.SysUserController.editUser(com.cic.entity.vo.EditUserVo) throws java.lang.Exception
+2018-06-10 23:16:43.751  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v2/api-docs],methods=[GET],produces=[application/json || application/hal+json]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)
+2018-06-10 23:16:43.754  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-06-10 23:16:43.754  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-06-10 23:16:43.755  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-06-10 23:16:43.757  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-10 23:16:43.758  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-10 23:16:43.874  INFO 11104 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-10 23:16:43.978  INFO 11104 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@689b02b6: startup date [Sun Jun 10 23:16:40 CST 2018]; root of context hierarchy
+2018-06-10 23:16:44.494  INFO 11104 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-06-10 23:16:44.606  INFO 11104 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-06-10 23:16:44.615  INFO 11104 --- [restartedMain] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-06-10 23:16:44.616  INFO 11104 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-06-10 23:16:44.632  INFO 11104 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2018-06-10 23:16:44.651  INFO 11104 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-06-10 23:16:45.236  INFO 11104 --- [restartedMain] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 9651 (http)
+2018-06-10 23:16:45.242  INFO 11104 --- [restartedMain] com.cic.MqPlatfromApplicationRunner      : 程序启动开始...
+2018-06-10 23:16:45.244  INFO 11104 --- [restartedMain] com.cic.MqPlatfromApplication            : Started MqPlatfromApplication in 5.228 seconds (JVM running for 6.014)
+2018-06-10 23:16:49.154  INFO 11104 --- [http-nio-9651-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-06-10 23:16:49.154  INFO 11104 --- [http-nio-9651-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-06-10 23:16:49.191  INFO 11104 --- [http-nio-9651-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 37 ms
+2018-06-10 23:16:49.532  INFO 11104 --- [http-nio-9651-exec-2] com.cic.module.SysBooksController        : 借阅管理>书籍借阅列表返回信息：{"head":{"msg":"成功","code":"200","success":"true"},"data":{"lastPage":3,"navigatepageNums":[1,2,3],"startRow":1,"hasNextPage":true,"prePage":0,"nextPage":2,"endRow":10,"pageSize":10,"list":[{"borrowTotle":"2","companyId":"1","isbn13":"9787302275954","title":"统计学习方法","bookId":"f1d853a1dc2b430ca358"},{"borrowTotle":"2","companyId":"1","isbn13":"9787115162212","title":"鸟哥的Linux私房菜 基础学习篇(第二版)","bookId":"eda73bf04e03495faa50"},{"borrowTotle":"2","companyId":"1","isbn13":"9787111547426","lastBorrowUserName":"王伟","lastBorrowDate":"2018-06-07 12:49:11.407","title":"Java核心技术·卷 I（原书第10版）","bookId":"32cfdd8af40541f694b5"},{"borrowTotle":"5","companyId":"1","isbn13":"9787111474364","lastBorrowUserName":"韩坤","lastBorrowDate":"2018-06-07 12:45:08.425","title":"人件（原书第3版）","bookId":"b078279a438d4c7e92bd"},{"borrowTotle":"1","companyId":"1","isbn13":"9787550257870","lastBorrowUserName":"金张娟","lastBorrowDate":"2018-06-08 11:06:28.992","title":"罗辑思维：迷茫时代的明白人","bookId":"ea8e29cee1c14c3ba581"},{"borrowTotle":"3","companyId":"1","isbn13":"9787229109721","lastBorrowUserName":"金张娟","lastBorrowDate":"2018-06-08 11:06:28.992","title":"疯狂人类进化史","bookId":"9487fb6fdbac4ef88311"},{"borrowTotle":"2","companyId":"1","isbn13":"9787508667713","lastBorrowUserName":"金张娟","lastBorrowDate":"2018-06-08 11:06:28.992","title":"生活的哲学","bookId":"5ed8ae38845b4277b99c"},{"borrowTotle":"3","companyId":"1","isbn13":"9787121215186","title":"Nginx高性能Web服务器详解","bookId":"d70c6550160b44b39203"},{"borrowTotle":"1","companyId":"1","isbn13":"9787508642802","lastBorrowUserName":"罗晓磊","lastBorrowDate":"2018-06-07 13:02:28.396","title":"创新者的窘境(全新修订版)","bookId":"0e2c5f409f7a40f593ab"},{"borrowTotle":"0","companyId":"1","isbn13":"9787115390608","title":"JavaScript 函数式编程","bookId":"f6bca9eed5354bb3926a"}],"pageNum":1,"navigatePages":8,"navigateFirstPage":1,"total":25,"pages":3,"firstPage":1,"size":10,"isLastPage":false,"hasPreviousPage":false,"navigateLastPage":3,"isFirstPage":true}}
+2018-06-10 23:17:00.564  INFO 11104 --- [http-nio-9651-exec-3] com.cic.module.SysBooksController        : 借阅管理>书籍借阅列表返回信息：{"head":{"msg":"成功","code":"200","success":"true"},"data":{"lastPage":1,"navigatepageNums":[1],"startRow":1,"hasNextPage":false,"prePage":0,"nextPage":0,"endRow":5,"pageSize":10,"list":[{"borrowTotle":"5","companyId":"1","isbn13":"9787111474364","lastBorrowUserName":"韩坤","lastBorrowDate":"2018-06-07 12:45:08.425","title":"人件（原书第3版）","bookId":"b078279a438d4c7e92bd"},{"borrowTotle":"1","companyId":"1","isbn13":"9787550257870","lastBorrowUserName":"金张娟","lastBorrowDate":"2018-06-08 11:06:28.992","title":"罗辑思维：迷茫时代的明白人","bookId":"ea8e29cee1c14c3ba581"},{"borrowTotle":"3","companyId":"1","isbn13":"9787229109721","lastBorrowUserName":"金张娟","lastBorrowDate":"2018-06-08 11:06:28.992","title":"疯狂人类进化史","bookId":"9487fb6fdbac4ef88311"},{"borrowTotle":"1","companyId":"1","isbn13":"9787302392644","lastBorrowUserName":"王伟","lastBorrowDate":"2018-06-07 12:49:11.407","title":"人月神话(40周年中文纪念版)","bookId":"9d8b948da8b243bebeee"},{"borrowTotle":"2","companyId":"1","isbn13":"9787302155676","lastBorrowUserName":"钱大仙","lastBorrowDate":"2018-06-07 12:57:48.464","title":"人月神话","bookId":"56e7298701d84ede9d0b"}],"pageNum":1,"navigatePages":8,"navigateFirstPage":1,"total":5,"pages":1,"firstPage":1,"size":5,"isLastPage":true,"hasPreviousPage":false,"navigateLastPage":1,"isFirstPage":true}}
+2018-06-10 23:17:15.488  INFO 11104 --- [http-nio-9651-exec-4] com.cic.module.SysBooksController        : 借阅管理>书籍借阅列表返回信息：{"head":{"msg":"成功","code":"200","success":"true"},"data":{"lastPage":0,"navigatepageNums":[],"startRow":0,"hasNextPage":false,"prePage":0,"nextPage":0,"endRow":0,"pageSize":10,"list":[],"pageNum":0,"navigatePages":8,"navigateFirstPage":0,"total":0,"pages":0,"firstPage":0,"size":0,"isLastPage":true,"hasPreviousPage":false,"navigateLastPage":0,"isFirstPage":false}}
+2018-06-10 23:17:31.843  INFO 11104 --- [http-nio-9651-exec-5] com.cic.module.SysBooksController        : 借阅管理>书籍借阅列表返回信息：{"head":{"msg":"成功","code":"200","success":"true"},"data":{"lastPage":1,"navigatepageNums":[1],"startRow":1,"hasNextPage":false,"prePage":0,"nextPage":0,"endRow":5,"pageSize":10,"list":[{"borrowTotle":"5","companyId":"1","isbn13":"9787111474364","lastBorrowUserName":"韩坤","lastBorrowDate":"2018-06-07 12:45:08.425","title":"人件（原书第3版）","bookId":"b078279a438d4c7e92bd"},{"borrowTotle":"1","companyId":"1","isbn13":"9787550257870","lastBorrowUserName":"金张娟","lastBorrowDate":"2018-06-08 11:06:28.992","title":"罗辑思维：迷茫时代的明白人","bookId":"ea8e29cee1c14c3ba581"},{"borrowTotle":"3","companyId":"1","isbn13":"9787229109721","lastBorrowUserName":"金张娟","lastBorrowDate":"2018-06-08 11:06:28.992","title":"疯狂人类进化史","bookId":"9487fb6fdbac4ef88311"},{"borrowTotle":"1","companyId":"1","isbn13":"9787302392644","lastBorrowUserName":"王伟","lastBorrowDate":"2018-06-07 12:49:11.407","title":"人月神话(40周年中文纪念版)","bookId":"9d8b948da8b243bebeee"},{"borrowTotle":"2","companyId":"1","isbn13":"9787302155676","lastBorrowUserName":"钱大仙","lastBorrowDate":"2018-06-07 12:57:48.464","title":"人月神话","bookId":"56e7298701d84ede9d0b"}],"pageNum":1,"navigatePages":8,"navigateFirstPage":1,"total":5,"pages":1,"firstPage":1,"size":5,"isLastPage":true,"hasPreviousPage":false,"navigateLastPage":1,"isFirstPage":true}}
+2018-06-10 23:17:38.295  INFO 11104 --- [http-nio-9651-exec-6] com.cic.module.SysBooksController        : 借阅管理>书籍借阅列表返回信息：{"head":{"msg":"成功","code":"200","success":"true"},"data":{"lastPage":1,"navigatepageNums":[1],"startRow":1,"hasNextPage":false,"prePage":0,"nextPage":0,"endRow":1,"pageSize":10,"list":[{"borrowTotle":"5","companyId":"1","isbn13":"9787111474364","lastBorrowUserName":"韩坤","lastBorrowDate":"2018-06-07 12:45:08.425","title":"人件（原书第3版）","bookId":"b078279a438d4c7e92bd"}],"pageNum":1,"navigatePages":8,"navigateFirstPage":1,"total":1,"pages":1,"firstPage":1,"size":1,"isLastPage":true,"hasPreviousPage":false,"navigateLastPage":1,"isFirstPage":true}}
+2018-06-10 23:17:44.828  INFO 11104 --- [http-nio-9651-exec-7] com.cic.module.SysBooksController        : 借阅管理>书籍借阅列表返回信息：{"head":{"msg":"成功","code":"200","success":"true"},"data":{"lastPage":1,"navigatepageNums":[1],"startRow":1,"hasNextPage":false,"prePage":0,"nextPage":0,"endRow":5,"pageSize":10,"list":[{"borrowTotle":"5","companyId":"1","isbn13":"9787111474364","lastBorrowUserName":"韩坤","lastBorrowDate":"2018-06-07 12:45:08.425","title":"人件（原书第3版）","bookId":"b078279a438d4c7e92bd"},{"borrowTotle":"1","companyId":"1","isbn13":"9787550257870","lastBorrowUserName":"金张娟","lastBorrowDate":"2018-06-08 11:06:28.992","title":"罗辑思维：迷茫时代的明白人","bookId":"ea8e29cee1c14c3ba581"},{"borrowTotle":"3","companyId":"1","isbn13":"9787229109721","lastBorrowUserName":"金张娟","lastBorrowDate":"2018-06-08 11:06:28.992","title":"疯狂人类进化史","bookId":"9487fb6fdbac4ef88311"},{"borrowTotle":"1","companyId":"1","isbn13":"9787302392644","lastBorrowUserName":"王伟","lastBorrowDate":"2018-06-07 12:49:11.407","title":"人月神话(40周年中文纪念版)","bookId":"9d8b948da8b243bebeee"},{"borrowTotle":"2","companyId":"1","isbn13":"9787302155676","lastBorrowUserName":"钱大仙","lastBorrowDate":"2018-06-07 12:57:48.464","title":"人月神话","bookId":"56e7298701d84ede9d0b"}],"pageNum":1,"navigatePages":8,"navigateFirstPage":1,"total":5,"pages":1,"firstPage":1,"size":5,"isLastPage":true,"hasPreviousPage":false,"navigateLastPage":1,"isFirstPage":true}}

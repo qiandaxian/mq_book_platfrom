@@ -33,6 +33,12 @@ public class SysUser {
     @Column(name = "is_admin")
     private Short isAdmin;
 
+    @Column(name = "account")
+    private String account;
+
+    @Column(name = "password")
+    private String password;
+
     /**
      * @return uuid
      */
@@ -137,5 +143,21 @@ public class SysUser {
      */
     public void setIsAdmin(Short isAdmin) {
         this.isAdmin = isAdmin;
+    }
+
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

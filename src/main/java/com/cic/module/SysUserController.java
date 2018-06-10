@@ -3,12 +3,15 @@ import com.alibaba.fastjson.JSONObject;
 import com.cic.config.dao.Result;
 import com.cic.config.dao.ResultGenerator;
 import com.cic.entity.dto.NativeDTO;
+import com.cic.entity.dto.UserListDTO;
 import com.cic.entity.dto.WxLoginResult;
 import com.cic.entity.po.SysBooks;
 import com.cic.entity.po.SysCompany;
 import com.cic.entity.po.SysUser;
 import com.cic.entity.vo.AddUserInfoVo;
 import com.cic.entity.vo.AdminLoginVo;
+import com.cic.entity.vo.EditUserVo;
+import com.cic.entity.vo.UserListVo;
 import com.cic.service.SysCompanyService;
 import com.cic.service.SysUserService;
 import com.cic.utils.UUIDGenerator;
@@ -147,12 +150,77 @@ public class SysUserController {
 	}
 
 
+	/**
+	 * 3.0后台管理员登陆接口
+	 * @param vo
+	 * @return
+	 * @throws Exception
+	 */
 	@PostMapping("/adminLogin")
-	public Result adminLogin(AdminLoginVo vo) throws Exception {
-
-		return ResultGenerator.genSuccessResult();
+	public Result adminLogin(@RequestBody AdminLoginVo vo) throws Exception {
+		Result result = null;
+    	SysUser loginUser = sysUserService.findBy("account",vo.getAccount());
+    	if (loginUser!=null && loginUser.getPassword()!=null && loginUser.getPassword().equals(vo.getPassword())){
+			Map data = new HashMap();
+			data.put("token",loginUser.getUuid());
+    		result = ResultGenerator.genSuccessResult(data);
+		}else {
+			result = ResultGenerator.genFailResult("用户不存在或者密码错误!");
+		}
+		logger.info("后台管理员登陆接口:{}",JSONObject.toJSONString(result));
+		return result;
 	}
 
-	
+	/**
+	 * 3.1用户列表接口
+	 * @param vo
+	 * @return
+	 */
+	@PostMapping("/userList")
+	public Result getUserList(@RequestBody UserListVo vo){
+		Result result = null;
+		PageHelper.startPage(vo.getPageNum(),vo.getPageSize());
+		List sysUserList = sysUserService.getUserListByVo(vo);
+		PageInfo<UserListDTO> pageInfo = new PageInfo<UserListDTO>(sysUserList);
+		result = ResultGenerator.genSuccessResult(pageInfo);
+		logger.info("3.1用户列表接口返回:{}",JSONObject.toJSONString(result));
+		return result;
+	}
 
+	/**
+	 * 3.2用户删除接口
+	 * @param map
+	 * @return
+	 * @throws Exception
+	 */
+	@PostMapping("/delete")
+	public Result deleteUser(@RequestBody Map map) throws Exception {
+		Result result = null;
+		String ids = (String) map.get("userId");
+		sysUserService.deleteByIds(ids);
+		result = ResultGenerator.genSuccessResult();
+		logger.info("用户删除接口返回：{}",JSONObject.toJSONString(result));
+		return result;
+	}
+
+	/**
+	 * 3.3用户管理>修改
+	 * @param vo
+	 * @return
+	 * @throws Exception
+	 */
+	@PostMapping("/edit")
+	public Result editUser(@RequestBody EditUserVo vo) throws Exception {
+		Result result = null;
+		SysUser editUser = sysUserService.findById(vo.getUserId());
+		if (editUser != null){
+			editUser.setCompanyId(vo.getCompanyId());
+			editUser.setUserName(vo.getUserName());
+			sysUserService.save(editUser);
+		}else {
+			throw new Exception();
+		}
+		logger.info("用户删除接口返回：{}",JSONObject.toJSONString(result));
+		return result;
+	}
 }

@@ -1,9 +1,11 @@
 package com.cic.service.impl;
 
 import com.cic.dao.SysBooksMapper;
+import com.cic.entity.dto.BookBorrowListDTO;
 import com.cic.entity.dto.MyBorrowDTO;
 import com.cic.entity.po.SysBooks;
 import com.cic.entity.po.SysBooksBorrowDetail;
+import com.cic.entity.vo.BookBorrowListVo;
 import com.cic.service.SysBooksService;
 import com.cic.config.dao.AbstractService;
 import org.springframework.stereotype.Service;
@@ -62,6 +64,11 @@ public class SysBooksServiceImpl extends AbstractService<SysBooks> implements Sy
         param.put("bookIsbn",bookIsbn);
         param.put("companyId",companyId);
         return sysBooksMapper.getSysBooksByIsbn(param);
+    }
+
+    @Override
+    public List<BookBorrowListDTO> getBookBorrowList(BookBorrowListVo vo) {
+        return sysBooksMapper.getBookBorrowList(vo);
     }
 
 

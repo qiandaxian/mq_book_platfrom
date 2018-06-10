@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.cic.tsinghua</groupId>
-    <artifactId>mq_platfrom</artifactId>
+    <groupId>com.cic</groupId>
+    <artifactId>mq_books_platfrom</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>mq_platfrom</name>
-    <description>mq platfrom web application</description>
+    <name>mq_books_platfrom</name>
+    <description>mq books platfrom application</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

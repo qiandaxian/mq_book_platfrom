@@ -88,4 +88,30 @@
     </if>
   </select>
 
+  <select id="getBookBorrowList" parameterType="com.cic.entity.vo.BookBorrowListVo" resultType="com.cic.entity.dto.BookBorrowListDTO" >
+    SELECT
+        t1.uuid AS bookId,
+        t1.title  AS  title,
+        t1.isbn13  AS isbn13,
+        (SELECT count(*) FROM sys_books_borrow_detail t2 WHERE t2.sys_books_uuid = t1.uuid)  as borrowTotle,
+        ( SELECT t4.user_name  FROM sys_books_borrow_detail t3 LEFT JOIN sys_user t4 ON t4.uuid = t3.sys_user_uuid WHERE t3.sys_books_uuid = t1.uuid
+            ORDER BY t3.create_time DESC LIMIT 1) AS  lastBorrowUserName,
+        (SELECT t4.create_time  FROM sys_books_borrow_detail t3 LEFT JOIN sys_user t4 ON t4.uuid = t3.sys_user_uuid WHERE t3.sys_books_uuid = t1.uuid
+            ORDER BY t3.create_time DESC LIMIT 1) AS   lastBorrowDate,
+        t1.company_id AS    companyId
+
+    FROM
+        sys_books t1
+        WHERE 1=1
+        AND t1.company_id = #{company_id}
+        <if test="bookIsbn != null and bookIsbn != ''">
+          AND  (t1.isbn10 = #{bookIsbn} OR t1.isbn13 = #{bookIsbn})
+        </if>
+        <if test=" bookName != null and bookName != '' " >
+          AND t1.title LIKE CONCAT('%',#{bookName},'%')
+        </if>
+
+  </select>
+
+
 </mapper>

@@ -14,8 +14,28 @@
     <result column="user_group" jdbcType="VARCHAR" property="userGroup" />
     <result column="is_admin" jdbcType="SMALLINT" property="isAdmin" />
     <result column="company_id" jdbcType="VARCHAR" property="companyId" />
-
-
-
+    <result column="account" jdbcType="VARCHAR" property="account" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
   </resultMap>
+<select id="getUserListByVo" parameterType="com.cic.entity.vo.UserListVo" resultType="com.cic.entity.dto.UserListDTO" >
+    SELECT
+       t1.uuid as userId,
+       t1.user_name as userName,
+       t1.open_id as openId,
+       to_char(t1.create_time,'YYYY-MM-DD HH24:MI:SS') as createTime,
+       t2.uuid as companyId,
+       t2.company_name as companyName
+    FROM
+    sys_user t1 LEFT JOIN sys_company t2 ON t1.company_id = t2.uuid
+    WHERE 1=1
+    <if test=" openId != null and openId != '' " >
+      AND   t1.open_id = #{openId}
+    </if>
+    <if test=" company_id != null and company_id != '' " >
+      AND t1.company_id = #{company_id}
+    </if>
+    <if test=" userName != null and userName != '' " >
+      AND t1.user_name LIKE CONCAT('%',#{userName},'%')
+    </if>
+</select>
 </mapper>

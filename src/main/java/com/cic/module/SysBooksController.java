@@ -2,6 +2,7 @@ package com.cic.module;
 import com.alibaba.fastjson.JSONObject;
 import com.cic.config.dao.Result;
 import com.cic.config.dao.ResultGenerator;
+import com.cic.entity.dto.BookBorrowListDTO;
 import com.cic.entity.dto.BookInfoDTO;
 import com.cic.entity.dto.BookStatusDTO;
 import com.cic.entity.dto.MyBorrowDTO;
@@ -11,6 +12,7 @@ import com.cic.entity.po.SysBooksGrade;
 import com.cic.entity.po.SysUser;
 import com.cic.entity.vo.AddBooksVo;
 import com.cic.entity.vo.AddGradeVo;
+import com.cic.entity.vo.BookBorrowListVo;
 import com.cic.service.SysBooksBorrowDetailService;
 import com.cic.service.SysBooksGradeService;
 import com.cic.service.SysBooksService;
@@ -227,16 +229,14 @@ public class SysBooksController {
 	public Result addGrade(@RequestBody AddGradeVo addGradeVo, @RequestHeader("Authorization") String sysUserId) throws Exception {
 		Result result = ResultGenerator.genSuccessResult();
 
+		SysUser sysUser = sysUserService.findById(sysUserId);
+		SysBooks sysBooks = getBooksByIsbn(addGradeVo.getBookIsbn(),sysUserId);
 
-
-			SysUser sysUser = sysUserService.findById(sysUserId);
-			SysBooks sysBooks = getBooksByIsbn(addGradeVo.getBookIsbn(),sysUserId);
-
-			if(sysBooks!=null&&sysUser!=null&&!StringUtils.isEmpty(addGradeVo.getGrade())) {
-				saveBookGrade(addGradeVo, sysUser, sysBooks);
-			}else {
-				result = ResultGenerator.genFailResult("参数错误!");
-			}
+		if(sysBooks!=null&&sysUser!=null&&!StringUtils.isEmpty(addGradeVo.getGrade())) {
+			saveBookGrade(addGradeVo, sysUser, sysBooks);
+		}else {
+			result = ResultGenerator.genFailResult("参数错误!");
+		}
 
 		logger.info("评分接口返回信息：{}",JSONObject.toJSON(result));
 		return result;
@@ -250,6 +250,22 @@ public class SysBooksController {
 		booksGrade.setSysBooksUuid(sysBooks.getUuid());
 		booksGrade.setSysUserUuid(sysUser.getUuid());
 		gradeService.save(booksGrade);
+	}
+
+
+	/**
+	 * 3.4借阅管理>书籍借阅列表
+	 * @return
+	 */
+	@PostMapping("/bookBorrowList")
+	public Result getBookBorrowList(@RequestBody BookBorrowListVo vo){
+		Result result = null;
+		PageHelper.startPage(vo.getPageNum(),vo.getPageSize());
+		List data = sysBooksService.getBookBorrowList(vo);
+		PageInfo<BookBorrowListDTO> pageInfo = new PageInfo<BookBorrowListDTO>(data);
+		result = ResultGenerator.genSuccessResult(pageInfo);
+		logger.info("借阅管理>书籍借阅列表返回信息：{}",JSONObject.toJSON(result));
+		return result;
 	}
 
 
