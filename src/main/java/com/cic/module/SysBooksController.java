@@ -2,16 +2,14 @@ package com.cic.module;
 import com.alibaba.fastjson.JSONObject;
 import com.cic.config.dao.Result;
 import com.cic.config.dao.ResultGenerator;
-import com.cic.entity.dto.BookBorrowListDTO;
-import com.cic.entity.dto.BookInfoDTO;
-import com.cic.entity.dto.BookStatusDTO;
-import com.cic.entity.dto.MyBorrowDTO;
+import com.cic.entity.dto.*;
 import com.cic.entity.po.SysBooks;
 import com.cic.entity.po.SysBooksBorrowDetail;
 import com.cic.entity.po.SysBooksGrade;
 import com.cic.entity.po.SysUser;
 import com.cic.entity.vo.AddBooksVo;
 import com.cic.entity.vo.AddGradeVo;
+import com.cic.entity.vo.BookBorrowInfoVo;
 import com.cic.entity.vo.BookBorrowListVo;
 import com.cic.service.SysBooksBorrowDetailService;
 import com.cic.service.SysBooksGradeService;
@@ -268,5 +266,21 @@ public class SysBooksController {
 		return result;
 	}
 
-
+	/**
+	 * 3.5借阅管理>书籍借阅>详情
+	 * @param vo
+	 * @return
+	 */
+	@PostMapping("/bookBorrowInfo")
+	public Result getBookBorrowInfo(@RequestBody BookBorrowInfoVo vo) {
+		Result result = null;
+		PageHelper.startPage(vo.getPageNum(),vo.getPageSize());
+		List<BookBorrowInfoDTO> data = sysBooksService.getBookBorrowInfo(vo);
+		PageInfo<BookBorrowInfoDTO> pageInfo = new PageInfo<BookBorrowInfoDTO>(data);
+		result = ResultGenerator.genSuccessResult(pageInfo);
+		logger.info("借阅管理>书籍借阅>详情返回信息：{}",JSONObject.toJSON(result));
+		return result;
+	}
 }
+
+

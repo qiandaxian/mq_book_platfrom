@@ -1,10 +1,12 @@
 package com.cic.service.impl;
 
 import com.cic.dao.SysBooksMapper;
+import com.cic.entity.dto.BookBorrowInfoDTO;
 import com.cic.entity.dto.BookBorrowListDTO;
 import com.cic.entity.dto.MyBorrowDTO;
 import com.cic.entity.po.SysBooks;
 import com.cic.entity.po.SysBooksBorrowDetail;
+import com.cic.entity.vo.BookBorrowInfoVo;
 import com.cic.entity.vo.BookBorrowListVo;
 import com.cic.service.SysBooksService;
 import com.cic.config.dao.AbstractService;
@@ -69,6 +71,12 @@ public class SysBooksServiceImpl extends AbstractService<SysBooks> implements Sy
     @Override
     public List<BookBorrowListDTO> getBookBorrowList(BookBorrowListVo vo) {
         return sysBooksMapper.getBookBorrowList(vo);
+    }
+
+    @Override
+    public List<BookBorrowInfoDTO> getBookBorrowInfo(BookBorrowInfoVo vo) {
+        return  sysBooksMapper.getBookBorrowInfo(vo);
+
     }
 
 

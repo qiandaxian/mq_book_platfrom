@@ -1,9 +1,11 @@
 package com.cic.service;
+import com.cic.entity.dto.BookBorrowInfoDTO;
 import com.cic.entity.dto.BookBorrowListDTO;
 import com.cic.entity.dto.MyBorrowDTO;
 import com.cic.entity.po.SysBooks;
 import com.cic.config.dao.Service;
 import com.cic.entity.po.SysBooksBorrowDetail;
+import com.cic.entity.vo.BookBorrowInfoVo;
 import com.cic.entity.vo.BookBorrowListVo;
 
 import java.util.List;
@@ -26,5 +28,7 @@ public interface SysBooksService extends Service<SysBooks> {
     SysBooks getSysBookByIsbnAndCompanyId(String bookIsbn,String companyId);
 
     List<BookBorrowListDTO> getBookBorrowList(BookBorrowListVo vo);
+
+    List<BookBorrowInfoDTO> getBookBorrowInfo(BookBorrowInfoVo vo);
 
 }

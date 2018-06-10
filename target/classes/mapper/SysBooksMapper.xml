@@ -88,4 +88,63 @@
     </if>
   </select>
 
+  <select id="getBookBorrowList" parameterType="com.cic.entity.vo.BookBorrowListVo" resultType="com.cic.entity.dto.BookBorrowListDTO" >
+    SELECT
+        t1.uuid AS bookId,
+        t1.title  AS  title,
+        t1.isbn13  AS isbn13,
+        (SELECT count(*) FROM sys_books_borrow_detail t2 WHERE t2.sys_books_uuid = t1.uuid)  as borrowTotle,
+        ( SELECT t4.user_name  FROM sys_books_borrow_detail t3 LEFT JOIN sys_user t4 ON t4.uuid = t3.sys_user_uuid WHERE t3.sys_books_uuid = t1.uuid
+            ORDER BY t3.create_time DESC LIMIT 1) AS  lastBorrowUserName,
+        (SELECT t4.create_time  FROM sys_books_borrow_detail t3 LEFT JOIN sys_user t4 ON t4.uuid = t3.sys_user_uuid WHERE t3.sys_books_uuid = t1.uuid
+            ORDER BY t3.create_time DESC LIMIT 1) AS   lastBorrowDate,
+        t1.company_id AS    companyId
+
+    FROM
+        sys_books t1
+        WHERE 1=1
+        AND t1.company_id = #{company_id}
+        <if test="bookIsbn != null and bookIsbn != ''">
+          AND  (t1.isbn10 = #{bookIsbn} OR t1.isbn13 = #{bookIsbn})
+        </if>
+        <if test=" bookName != null and bookName != '' " >
+          AND t1.title LIKE CONCAT('%',#{bookName},'%')
+        </if>
+
+  </select>
+
+  <select id="getBookBorrowInfo" parameterType="com.cic.entity.vo.BookBorrowInfoVo" resultType="com.cic.entity.dto.BookBorrowInfoDTO" >
+    SELECT
+      t2.user_name AS borrowUserName ,
+      to_char(t1.create_time, 'YYYY-MM-DD HH24:MI:SS') AS borrowDate,
+      CASE WHEN t1.borrow_status = 1 THEN 'true' ELSE 'false' END AS isReturn,
+      to_char(t1.return_time, 'YYYY-MM-DD HH24:MI:SS') AS returnDate
+    FROM sys_books_borrow_detail t1 LEFT JOIN sys_user t2 ON t2.uuid = t1.sys_user_uuid LEFT JOIN sys_books t3 ON t3.uuid = t1.sys_books_uuid
+    WHERE 1=1
+    AND t3.uuid = #{bookId}
+
+    <if test=" bookBorrowUserName != null and bookBorrowUserName != '' " >
+      AND t2.user_name LIKE CONCAT('%',#{bookBorrowUserName},'%')
+    </if>
+    <if test=" bookBorrowStartDate != null and bookBorrowStartDate != '' " >
+      AND t1.create_time <![CDATA[>=]]> #{bookBorrowStartDate}
+    </if>
+    <if test=" bookBorrowEndDate != null and bookBorrowEndDate != '' " >
+      AND t1.create_time  <![CDATA[<=]]> #{bookBorrowEndDate}
+    </if>
+    <!--<if test=" bookBorrowNumberGt != null and bookBorrowNumberGt != '' " >-->
+           <!--AND-->
+           <!--t1.create_time - -->
+
+           <!--CASE WHEN t1.borrow_status = 1-->
+             <!--THEN-->
+            <!--t1.return_time-->
+             <!--ELSE-->
+             <!--now()-->
+           <!--END-->
+           <!--<![CDATA[>=]]> ${bookBorrowNumberGt}-->
+    <!--</if>-->
+  </select>
+
+
 </mapper>
