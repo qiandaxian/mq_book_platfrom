@@ -8,10 +8,7 @@ import com.cic.entity.dto.WxLoginResult;
 import com.cic.entity.po.SysBooks;
 import com.cic.entity.po.SysCompany;
 import com.cic.entity.po.SysUser;
-import com.cic.entity.vo.AddUserInfoVo;
-import com.cic.entity.vo.AdminLoginVo;
-import com.cic.entity.vo.EditUserVo;
-import com.cic.entity.vo.UserListVo;
+import com.cic.entity.vo.*;
 import com.cic.service.SysCompanyService;
 import com.cic.service.SysUserService;
 import com.cic.utils.UUIDGenerator;
@@ -159,8 +156,8 @@ public class SysUserController {
 	@PostMapping("/adminLogin")
 	public Result adminLogin(@RequestBody AdminLoginVo vo) throws Exception {
 		Result result = null;
-    	SysUser loginUser = sysUserService.findBy("account",vo.getAccount());
-    	if (loginUser!=null && loginUser.getPassword()!=null && loginUser.getPassword().equals(vo.getPassword())){
+    	SysUser loginUser = sysUserService.findBy("account",vo.getUserAccount());
+    	if (loginUser!=null && loginUser.getPassword()!=null && loginUser.getPassword().equals(vo.getUserPassword())){
 			Map data = new HashMap();
 			data.put("token",loginUser.getUuid());
     		result = ResultGenerator.genSuccessResult(data);
@@ -189,16 +186,20 @@ public class SysUserController {
 
 	/**
 	 * 3.2用户删除接口
-	 * @param map
+	 * @param vo
 	 * @return
 	 * @throws Exception
 	 */
 	@PostMapping("/delete")
-	public Result deleteUser(@RequestBody Map map) throws Exception {
-		Result result = null;
-		String ids = (String) map.get("userId");
-		sysUserService.deleteByIds(ids);
-		result = ResultGenerator.genSuccessResult();
+	public Result deleteUser(@RequestBody UserDeleteVo vo) throws Exception {
+		Result result =  ResultGenerator.genSuccessResult();
+		vo.getUserId().forEach(id-> {
+			try {
+				sysUserService.deleteById(id);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		});
 		logger.info("用户删除接口返回：{}",JSONObject.toJSONString(result));
 		return result;
 	}

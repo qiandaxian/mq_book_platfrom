@@ -7,14 +7,12 @@ import com.cic.entity.po.SysBooks;
 import com.cic.entity.po.SysBooksBorrowDetail;
 import com.cic.entity.po.SysBooksGrade;
 import com.cic.entity.po.SysUser;
-import com.cic.entity.vo.AddBooksVo;
-import com.cic.entity.vo.AddGradeVo;
-import com.cic.entity.vo.BookBorrowInfoVo;
-import com.cic.entity.vo.BookBorrowListVo;
+import com.cic.entity.vo.*;
 import com.cic.service.SysBooksBorrowDetailService;
 import com.cic.service.SysBooksGradeService;
 import com.cic.service.SysBooksService;
 import com.cic.service.SysUserService;
+import com.cic.utils.DaxianStringUtils;
 import com.cic.utils.UUIDGenerator;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -49,6 +47,12 @@ public class SysBooksController {
 	@Resource
     SysBooksGradeService gradeService;
 
+	/**
+	 * 2.7添加图书接口
+	 * @param addBooksVo
+	 * @param sysUserId
+	 * @return
+	 */
     @PostMapping("/addBooks")
     public Result create(@RequestBody AddBooksVo addBooksVo,@RequestHeader("Authorization") String sysUserId) {
         Result result = null;
@@ -77,6 +81,13 @@ public class SysBooksController {
         return result;
     }
 
+	/**
+	 * 2.2图书信息查询
+	 * @param bookIsbn
+	 * @param sysUserId
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping("/getBooks")
 	public Result getBooks(String bookIsbn,@RequestHeader("Authorization") String sysUserId) throws Exception {
 		Result result = null;
@@ -107,6 +118,13 @@ public class SysBooksController {
 		return books;
 	}
 
+	/**
+	 * 2.1书籍状态查询
+	 * @param bookIsbn
+	 * @param sysUserId
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping("/bookStatus")
 	public Result getBookStatus(String bookIsbn,@RequestHeader("Authorization") String sysUserId) throws Exception {
 		Result result = null;
@@ -151,6 +169,11 @@ public class SysBooksController {
 		return bookStatusDTO;
 	}
 
+	/**
+	 * 2.3我的借阅
+	 * @param sysUserId
+	 * @return
+	 */
 	@RequestMapping("/myBorrow")
     public Result list(@RequestHeader("Authorization") String sysUserId) {
     	Result result = null;
@@ -162,6 +185,14 @@ public class SysBooksController {
         return result;        
     }
 
+
+	/**
+	 * 2.4借书接口
+	 * @param body
+	 * @param sysUserId
+	 * @return
+	 * @throws Exception
+	 */
 	@PostMapping("/borrowBooks")
 	public Result borrowBooks(@RequestBody Map body,@RequestHeader("Authorization") String sysUserId) throws Exception {
 		Result result = ResultGenerator.genFailResult();
@@ -186,7 +217,7 @@ public class SysBooksController {
 		sysBooksBorrowDetail.setCreateTime(new Date());
 		sysBooksBorrowDetail.setSysBooksUuid(sysBooks.getUuid());
 		sysBooksBorrowDetail.setSysUserUuid(sysUser.getUuid());
-		sysBooksBorrowDetail.setBorrowStatus(SysBooksBorrowDetail.BORROW_STATUS_TRUE);
+		sysBooksBorrowDetail.setBorrowStatus(SysBooksBorrowDetail.BORROW_STATUS_BORROW);
 		sysBooksBorrowDetailService.save(sysBooksBorrowDetail);
 	}
 
@@ -216,7 +247,7 @@ public class SysBooksController {
 	private Result updateBorrowDetail(List<SysBooksBorrowDetail> sysBooksBorrowDetails) throws Exception {
 		Result result;
 		SysBooksBorrowDetail backBook = sysBooksBorrowDetails.get(0);
-		backBook.setBorrowStatus(SysBooksBorrowDetail.BORROW_STATUS_FALSE);
+		backBook.setBorrowStatus(SysBooksBorrowDetail.BORROW_STATUS_RETURN);
 		backBook.setReturnTime(new Date());
 		sysBooksBorrowDetailService.update(backBook);
 		result = ResultGenerator.genSuccessResult();
@@ -281,6 +312,76 @@ public class SysBooksController {
 		logger.info("借阅管理>书籍借阅>详情返回信息：{}",JSONObject.toJSON(result));
 		return result;
 	}
+
+	/**
+	 * 3.6借阅管理>用户借阅列表
+	 * @param vo
+	 * @return
+	 */
+	@PostMapping("/userBorrowList")
+	public Result getUserBorrowList(@RequestBody UserListVo vo){
+		Result result = null;
+		PageHelper.startPage(vo.getPageNum(),vo.getPageSize());
+		List<UserBorrowListDTO> data = sysBooksService.getUserBorrowList(vo);
+		PageInfo<UserBorrowListDTO> pageInfo = new PageInfo<UserBorrowListDTO>(data);
+		result = ResultGenerator.genSuccessResult(pageInfo);
+		logger.info("借阅管理>用户借阅列表返回信息：{}",JSONObject.toJSON(result));
+		return result;
+	}
+
+
+	/**
+	 *3.7借阅管理>用户借阅>详情
+	 * @param vo
+	 * @return
+	 */
+	@PostMapping("/userBorrowInfo")
+	public Result getUserBorrowInfo(@RequestBody UserBorrowInfoVo vo){
+		Result result = null;
+		PageHelper.startPage(vo.getPageNum(),vo.getPageSize());
+		List<UserBorrowInfoDTO> data = sysBooksService.getUserBorrowInfo(vo);
+		PageInfo<UserBorrowInfoDTO> pageInfo = new PageInfo<UserBorrowInfoDTO>(data);
+		result = ResultGenerator.genSuccessResult(pageInfo);
+		logger.info("借阅管理>用户借阅>详情返回信息：{}",JSONObject.toJSON(result));
+		return result;
+	}
+
+	/**
+	 * 3.8图书管理>图书列表
+	 * @param vo
+	 * @return
+	 */
+	@PostMapping("/bookList")
+	public Result getBooksList(@RequestBody BookListVo vo) throws Exception{
+		Result result = null;
+		PageHelper.startPage(vo.getPageNum(),vo.getPageSize());
+		PageInfo<BookListDTO> pageInfo = new PageInfo<BookListDTO>(sysBooksService.getBookList(vo));
+		result = ResultGenerator.genSuccessResult(pageInfo);
+		logger.info("图书管理>图书列表返回信息：{}",JSONObject.toJSON(result));
+		return result;
+	}
+
+
+	/**
+	 * 3.9图书管理>删除
+	 * @param vo
+	 * @return
+	 * @throws Exception
+	 */
+	@PostMapping("/delete")
+	public Result deleteUser(@RequestBody BookDeleteVo vo) throws Exception {
+		Result result =  ResultGenerator.genSuccessResult();
+		vo.getBookId().forEach(id-> {
+			try {
+				sysBooksService.deleteById(id);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		});
+		logger.info("图书管理>删除接口返回：{}",JSONObject.toJSONString(result));
+		return result;
+	}
+
 }
 
 

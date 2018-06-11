@@ -1,13 +1,10 @@
 package com.cic.service.impl;
 
 import com.cic.dao.SysBooksMapper;
-import com.cic.entity.dto.BookBorrowInfoDTO;
-import com.cic.entity.dto.BookBorrowListDTO;
-import com.cic.entity.dto.MyBorrowDTO;
+import com.cic.entity.dto.*;
 import com.cic.entity.po.SysBooks;
 import com.cic.entity.po.SysBooksBorrowDetail;
-import com.cic.entity.vo.BookBorrowInfoVo;
-import com.cic.entity.vo.BookBorrowListVo;
+import com.cic.entity.vo.*;
 import com.cic.service.SysBooksService;
 import com.cic.config.dao.AbstractService;
 import org.springframework.stereotype.Service;
@@ -32,7 +29,7 @@ public class SysBooksServiceImpl extends AbstractService<SysBooks> implements Sy
     public List<MyBorrowDTO> getMyBorrowList(String sysUserId) {
         Map param = new HashMap();
         param.put("sysUserId",sysUserId);
-        param.put("borrowStatus",SysBooksBorrowDetail.BORROW_STATUS_TRUE);
+        param.put("borrowStatus",SysBooksBorrowDetail.BORROW_STATUS_BORROW);
         return sysBooksMapper.getMyBorrowList(param);
     }
 
@@ -41,7 +38,7 @@ public class SysBooksServiceImpl extends AbstractService<SysBooks> implements Sy
         Map param = new HashMap();
         param.put("sysUserId",sysUserId);
         param.put("sysBooksId",bookId);
-        param.put("borrowStatus",SysBooksBorrowDetail.BORROW_STATUS_TRUE);
+        param.put("borrowStatus",SysBooksBorrowDetail.BORROW_STATUS_BORROW);
         return sysBooksMapper.getUserBorrowListByBookId(param);
     }
 
@@ -77,6 +74,22 @@ public class SysBooksServiceImpl extends AbstractService<SysBooks> implements Sy
     public List<BookBorrowInfoDTO> getBookBorrowInfo(BookBorrowInfoVo vo) {
         return  sysBooksMapper.getBookBorrowInfo(vo);
 
+    }
+
+    @Override
+    public List<UserBorrowListDTO> getUserBorrowList(UserListVo vo) {
+        return sysBooksMapper.getUserBorrowList(vo);
+
+    }
+
+    @Override
+    public List<UserBorrowInfoDTO> getUserBorrowInfo(UserBorrowInfoVo vo) {
+        return sysBooksMapper.getUserBorrowInfo(vo);
+    }
+
+    @Override
+    public List<BookListDTO> getBookList(BookListVo vo) {
+        return sysBooksMapper.getBookList(vo);
     }
 
 

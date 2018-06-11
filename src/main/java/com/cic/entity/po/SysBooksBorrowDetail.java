@@ -5,8 +5,8 @@ import javax.persistence.*;
 
 @Table(name = "sys_books_borrow_detail")
 public class SysBooksBorrowDetail {
-    public static final int BORROW_STATUS_TRUE=1;
-    public static final int BORROW_STATUS_FALSE=0;
+    public static final int BORROW_STATUS_RETURN=1;
+    public static final int BORROW_STATUS_BORROW=0;
 
     @Id
     private String uuid;
