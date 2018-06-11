@@ -31,8 +31,8 @@
     <if test=" openId != null and openId != '' " >
       AND   t1.open_id = #{openId}
     </if>
-    <if test=" company_id != null and company_id != '' " >
-      AND t1.company_id = #{company_id}
+    <if test=" companyId != null and companyId != '' " >
+      AND t1.company_id = #{companyId}
     </if>
     <if test=" userName != null and userName != '' " >
       AND t1.user_name LIKE CONCAT('%',#{userName},'%')

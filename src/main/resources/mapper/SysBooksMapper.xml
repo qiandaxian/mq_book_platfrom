@@ -103,7 +103,7 @@
     FROM
         sys_books t1
         WHERE 1=1
-        AND t1.company_id = #{company_id}
+        AND t1.company_id = #{companyId}
         <if test="bookIsbn != null and bookIsbn != ''">
           AND  (t1.isbn10 = #{bookIsbn} OR t1.isbn13 = #{bookIsbn})
         </if>
@@ -127,15 +127,15 @@
       AND t2.user_name LIKE CONCAT('%',#{bookBorrowUserName},'%')
     </if>
     <if test=" bookBorrowStartDate != null and bookBorrowStartDate != '' " >
-      AND t1.create_time <![CDATA[>=]]> #{bookBorrowStartDate}
+      AND t1.create_time <![CDATA[>=]]> #{bookBorrowStartDate}::timestamp
     </if>
     <if test=" bookBorrowEndDate != null and bookBorrowEndDate != '' " >
-      AND t1.create_time  <![CDATA[<=]]> #{bookBorrowEndDate}
+      AND t1.create_time  <![CDATA[<=]]> #{bookBorrowEndDate}::timestamp
     </if>
     <if test=" isReturn != null and isReturn != '' " >
       AND t1.borrow_status =  CASE WHEN #{isReturn} = 'true' THEN 1 ELSE 0 END
     </if>
-    <if test=" bookBorrowNumberGt != null and bookBorrowNumberGt != '' " >
+    <if test=" bookBorrowNumberGt != null and bookBorrowNumberGt != '' and bookBorrowNumberGt != '0' " >
       AND
       CASE WHEN t1.borrow_status = 1
       THEN
@@ -164,7 +164,7 @@
       FROM
       sys_user t1 LEFT JOIN sys_company t2 ON t1.company_id = t2.uuid
       WHERE 1=1
-      AND t1.company_id = #{company_id}
+      AND t1.company_id = #{companyId}
       <if test=" openId != null and openId != '' " >
         AND   t1.open_id = #{openId}
       </if>
@@ -192,10 +192,10 @@
       AND t4.title LIKE CONCAT('%',#{bookName},'%')
     </if>
     <if test=" bookBorrowStartDate != null and bookBorrowStartDate != '' " >
-      AND t3.create_time <![CDATA[>=]]> #{bookBorrowStartDate}
+      AND t3.create_time <![CDATA[>=]]> #{bookBorrowStartDate}::timestamp
     </if>
     <if test=" bookBorrowEndDate != null and bookBorrowEndDate != '' " >
-      AND t3.create_time  <![CDATA[<=]]> #{bookBorrowEndDate}
+      AND t3.create_time  <![CDATA[<=]]> #{bookBorrowEndDate}::timestamp
     </if>
     <if test=" isReturn != null and isReturn != '' " >
       AND t3.borrow_status =  CASE WHEN #{isReturn} = 'true' THEN 1 ELSE 0 END
@@ -217,7 +217,7 @@
   <select id="getBookList" parameterType="com.cic.entity.vo.BookListVo" resultType="com.cic.entity.dto.BookListDTO" >
     select
         t1.uuid as  bookId,
-		t1.isbn10 AS bookIsbn,
+		t1.isbn13 AS bookIsbn,
 		t1.title AS bookName,
 		t1.totle AS total,
 		(SELECT (t1.totle - count(t2.uuid)) FROM sys_books_borrow_detail t2 WHERE t2.sys_books_uuid = t1.uuid AND t2.borrow_status = 0 ) AS stockNumber ,
@@ -233,7 +233,7 @@
     <if test=" bookName != null and bookName != '' " >
       AND t1.title LIKE CONCAT('%',#{bookName},'%')
     </if>
-    <if test=" stockNumberGt != null and stockNumberGt != '' " >
+    <if test=" stockNumberGt != null and stockNumberGt != '' and stockNumberGt != '0' " >
       <![CDATA[
       AND (SELECT t1.totle - count(t2.uuid) FROM sys_books_borrow_detail t2 WHERE t2.sys_books_uuid = t1.uuid AND t2.borrow_status = 0 ) >=  ${stockNumberGt}
        ]]>

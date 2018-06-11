@@ -6,5 +6,5 @@ import lombok.Data;
 public class BookBorrowListVo extends PageBaseVo{
     private String bookIsbn;
     private String bookName;
-    private String company_id;
+    private String companyId;
 }

@@ -131,7 +131,7 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
     //解决跨域问题
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        //registry.addMapping("/**");
+        registry.addMapping("/**");
     }
 
     //添加拦截器
@@ -143,7 +143,7 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
                 @Override
                 public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
                     //验证签名
-                    if(!"/api/sysUser/login".equals(request.getRequestURI())) {
+                    if(!"/api/sysUser/login".equals(request.getRequestURI())||!"/api/sysUser/adminLogin".equals(request.getRequestURI())) {
                         boolean pass = validateSign(request);
 
                         if (pass) {

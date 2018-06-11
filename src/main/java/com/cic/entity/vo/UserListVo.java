@@ -6,5 +6,5 @@ import lombok.Data;
 public class UserListVo extends PageBaseVo {
     private String openId;
     private String userName;
-    private String company_id;
+    private String companyId;
 }

@@ -138,11 +138,17 @@ public class SysUserController {
 		return result;
 	}
 
+	/**
+	 * 公共接口>公司列表接口
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping("/getCompany")
 	public Result getCompanyList() throws Exception {
 		List<SysCompany> sysCompanyList = sysCompanyService.findAll();
 		List<NativeDTO> data = new ArrayList();
 		sysCompanyList.forEach(sysCompany -> data.add(convertSysCompanyToNativeDTO(sysCompany)));
+		Result result = ResultGenerator.genSuccessResult(data);
 		return ResultGenerator.genSuccessResult(data);
 	}
 
@@ -217,7 +223,7 @@ public class SysUserController {
 		if (editUser != null){
 			editUser.setCompanyId(vo.getCompanyId());
 			editUser.setUserName(vo.getUserName());
-			sysUserService.save(editUser);
+			sysUserService.update(editUser);
 		}else {
 			throw new Exception();
 		}
