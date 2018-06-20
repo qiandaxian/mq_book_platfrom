@@ -110,7 +110,7 @@
         <if test=" bookName != null and bookName != '' " >
           AND t1.title LIKE CONCAT('%',#{bookName},'%')
         </if>
-
+         AND  (SELECT count(*) FROM sys_books_borrow_detail t2 WHERE t2.sys_books_uuid = t1.uuid) > 0
   </select>
 
   <select id="getBookBorrowInfo" parameterType="com.cic.entity.vo.BookBorrowInfoVo" resultType="com.cic.entity.dto.BookBorrowInfoDTO" >
@@ -171,6 +171,7 @@
       <if test=" userName != null and userName != '' " >
         AND t1.user_name LIKE CONCAT('%',#{userName},'%')
       </if>
+      AND        (SELECT COUNT(*) FROM sys_books_borrow_detail t3 LEFT JOIN sys_books t4 ON t3.sys_books_uuid = t4.uuid WHERE 1=1 AND t4.company_id = t1.company_id AND t3.sys_user_uuid = t1.uuid ) > 0
 
   </select>
   <select id="getUserBorrowInfo" parameterType="com.cic.entity.vo.UserBorrowInfoVo" resultType="com.cic.entity.dto.UserBorrowInfoDTO" >

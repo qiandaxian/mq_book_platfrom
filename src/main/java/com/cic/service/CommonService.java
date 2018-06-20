@@ -1,6 +1,8 @@
 package com.cic.service;
 
+import com.alibaba.fastjson.JSONObject;
 import com.cic.entity.dto.BookInfoDTO;
+import com.cic.entity.dto.CityFence;
 import com.cic.entity.dto.NativeDTO;
 import com.cic.entity.dto.UserInfoDTO;
 import com.cic.entity.po.SysBooks;
@@ -53,6 +55,8 @@ public class CommonService  {
         NativeDTO nativeDTO = new NativeDTO();
         nativeDTO.setId(sysCompany.getUuid());
         nativeDTO.setValue(sysCompany.getCompanyName());
+        CityFence cityFence = JSONObject.parseObject(sysCompany.getCompanyScope(),CityFence.class);
+        nativeDTO.setCityFence(cityFence);
         return nativeDTO;
     }
 
