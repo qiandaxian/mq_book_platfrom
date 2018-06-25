@@ -29,7 +29,6 @@ public class SysBooksServiceImpl extends AbstractService<SysBooks> implements Sy
     public List<MyBorrowDTO> getMyBorrowList(String sysUserId) {
         Map param = new HashMap();
         param.put("sysUserId",sysUserId);
-        param.put("borrowStatus",SysBooksBorrowDetail.BORROW_STATUS_BORROW);
         return sysBooksMapper.getMyBorrowList(param);
     }
 
@@ -38,7 +37,6 @@ public class SysBooksServiceImpl extends AbstractService<SysBooks> implements Sy
         Map param = new HashMap();
         param.put("sysUserId",sysUserId);
         param.put("sysBooksId",bookId);
-        param.put("borrowStatus",SysBooksBorrowDetail.BORROW_STATUS_BORROW);
         return sysBooksMapper.getUserBorrowListByBookId(param);
     }
 
